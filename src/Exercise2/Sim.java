@@ -9,13 +9,18 @@ public class Sim {
     private Chiamata[] ultimeChiamate;
 
     //costruttore
-    public Sim(String numeroTelefono, double creditoResiduo){
+    public Sim(String numeroTelefono){
         this.numeroTelefono = numeroTelefono;
         this.creditoResiduo = 0;
         this.ultimeChiamate = new Chiamata[5];
     }
 
-    //metodo
+    //metodi
+
+    public void aggiungiCredito(double creditoResiduo){
+        this.creditoResiduo += creditoResiduo;
+
+    }
     public Sim chiama(String numeroChiamata, int secondi){
         Chiamata call = new Chiamata(numeroChiamata,secondi);
         this.ultimeChiamate[4] = this.ultimeChiamate[3];
@@ -30,7 +35,7 @@ public class Sim {
     public String toString() {
         return "Sim{" +
             "numeroTelefono='" + numeroTelefono + '\'' +
-            ", creditoResiduo=" + creditoResiduo + " €" +
+            ", creditoResiduo=" + creditoResiduo + "€" +
             ", ultimeChiamate=" + Arrays.toString(ultimeChiamate) +
             '}';
     }
